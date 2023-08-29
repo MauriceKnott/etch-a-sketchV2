@@ -1,0 +1,139 @@
+body {
+  margin: 0;
+}
+
+:root {
+  --grid-cols: 1;
+  --grid-rows: 1;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-weight: 900;
+  font-size: 3rem;
+  font-family: "Kanit", sans-serif;
+  font-family: "Space Mono", monospace;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.color,
+.rainbow,
+.eraser,
+.clear {
+  margin-top: 5em;
+  appearance: button;
+  background-color: #2bbed8;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: din-round, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 20px;
+  margin: 0.9em;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter 0.2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.color:after,
+.rainbow:after,
+.eraser:after,
+.clear:after {
+  background-clip: padding-box;
+  background-color: #1196b894;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.color:main,
+.color:focus {
+  user-select: auto;
+}
+
+.color:hover:not(:disabled),
+.rainbow:hover:not(:disabled),
+.eraser:hover:not(:disabled),
+.clear:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+.color:disabled,
+.rainbow:disabled,
+.eraser:disabled,
+.clear:disabled {
+  cursor: auto;
+}
+
+.pandle {
+  margin-top: 10em;
+  float: left;
+  display: grid;
+  width: 45em;
+  align-items: center;
+  justify-content: right;
+  place-self: center;
+}
+
+.container {
+  border: 1px solid black;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  max-width: 650px;
+  margin: 4em 0em 0em 55em;
+  grid-template-rows: repeat(var(--grid-rows), 1fr);
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+}
+
+.grid-item {
+  text-indent: -9999px;
+  font-display: none;
+  display: -ms-inline-grid;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--secondary-light);
+  box-shadow: rgba(0, 0, 0, 0.24) 0.5px 0.5px 1px 0.5px;
+}
+
+/* .grid-item:hover {} */
+
+.color:main,
+.color:focus {
+  user-select: auto;
+}
+
+.color:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+.color:disabled {
+  cursor: auto;
+}
